@@ -31,19 +31,18 @@ get '/' do
 	erb :index
   # redirect '/index'
 end
+
 get '/sign_up' do
 	erb :sign_up
 end
 
-
-
- post '/sign_up' do
+post '/sign_up' do
  	# code below shows form collecting data
  	puts 'my params are' + params.inspect
    @user = User.create(params[:user])
     flash[:notice] = 'New account created'
     session[:user_id] = @user.id
-    redirect '/login'
+    redirect '/profile'
 	  
   # flash[:notice] = 'New account created'
   # session[:user_id] = @user.id
@@ -54,8 +53,7 @@ get '/login' do
 	erb :login
 end
 
-   post '/login' do
-
+post '/login' do
 #puts 'my params are' + params.inspect
 
     @user = User.where(username: params[:user][:username]).first
@@ -73,9 +71,9 @@ end
 	 end
 end
 
-get '/sign_out' do
-  session[:user_id] = nil
-  redirect '/'
-end 
+get '/profile' do
+	erb :profile
+end
 
+# ---------- This is the code for Posts ----------
 
