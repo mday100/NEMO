@@ -1,19 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Web Project Week 3</title>
-	<link href='http://fonts.googleapis.com/css?family=Poller+One' rel='stylesheet' type='text/css'>
-	<!-- <link rel="stylesheet" href="css/style.css"/> -->
-<head>
-
-<title>Welcome</title>
-
+	<title>Movie Reviews</title>
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript" src="js/modernizr.js"></script>
 </head>
 <body>
+	<div class="main-wrapper">
+		<header class="main-header">
+			<ul class="main-nav">
+				<li class="main-logo"><h1><a href="#">Rotten Tomatoes</a></h1></li>
+				<li><a href="#" data-icon="&#xe602;">Movies</a></li>
+				<li><a href="#" data-icon="&#xe601;">TV</a></li>
+				<li><a href="#" data-icon="&#xe603;">Blog</a></li>
+				<li><a href="#" data-icon="&#xe600;">Login</a></li>
+			</ul>
+		</header>
+		</div>
 
 <%= flash[:notice] if flash[:notice] %>
 
 <%= yield %>
 </body>
 </html>
+
+
+
+
+
+<body>
