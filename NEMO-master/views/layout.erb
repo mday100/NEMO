@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Movie Reviews</title>
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript" src="js/modernizr.js"></script>
+</head>
+<body>
+	<div class="main-wrapper">
+		<header class="main-header">
+			<ul>
+				<% if current_user %>
+				<li><%= "Welcome #{current_user.username.capitalize}!" %> | <a href="/sign_out">Sign Out </a></li>
+				<% else %>
+				<li><a href="login">Sign in</a> | <a href="sign_up">Sign up</a><li>
+				<% end %>
+			</ul>
+			<ul class="main-nav">
+				<li class="main-logo"><h1><a href="#">Rotten Tomatoes</a></h1></li>
+				<li><a href="#" data-icon="&#xe602;">Movies</a></li>
+				<li><a href="#" data-icon="&#xe601;">TV</a></li>
+				<li><a href="#" data-icon="&#xe603;">Blog</a></li>
+				<li><a href="#" data-icon="&#xe600;">Login</a></li>
+			</ul>
+		</header>
+		</div>
+
+<%= flash[:notice] if flash[:notice] %>
+
+<%= yield %>
+</body>
+</html>
+
+
+
+
+
+<body>

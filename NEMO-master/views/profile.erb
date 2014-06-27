@@ -1,0 +1,64 @@
+<% if current_user %>
+<div id="user-details">
+	<h3><%= "#{current_user.username}'s Profile" %></h3>
+	<p>
+		User ID: <%= current_user.id %> ||
+		User Name: <%= current_user.username %> ||
+		First Name: <%= current_user.fname %> ||
+		Email Address: <%= current_user.email %>
+	</p>
+</div>
+
+<div id="user-followed">
+	<h3><%= "#{current_user.username}'s Followeds" %></h3>
+	<% users = User.all %>
+	<ul>
+		<% users.each do |user| %>
+		<li><%= user.followeds %> | <a href='unfollow/<%="#{user.id}"%>'>Follow</a></li>
+		<% end %>
+	</ul>	
+<br />
+
+</div>
+
+<div id="user-posts">
+	<h3><%= "#{current_user.username}'s Posts" %>
+		<ul>
+	<% current_user.posts.each do |post| %>
+		<li><%= post.id %></li>
+		<li><%= post.title %></li>
+		<li><%= post.body %></li>
+	</br>
+	<% end %>
+	</ul>
+</div>
+
+<% else %>
+	<h3>No logged in user</h3>
+<% end %>
+
+<h1>New Post</h1>
+<form action="/profile" method="post">
+  <label for="post_title">Title:</label><br />
+  <input id="post_title" name="post[title]" type="text" />
+  <br />
+ 
+  <label for="post_body">Body:</label><br />
+  <textarea id="post_body" name="post[body]" rows="5"></textarea>
+  <br />
+ 
+  <input type="submit" value="Create Post" />
+</form>
+
+<br /><br />
+
+<h1>All Users</h1>
+
+	<% users = User.all %>
+	<ul>
+		<% users.each do |user| %>
+		<li><%= user.username %> | <a href='follow/<%="#{user.id}"%>'>Follow</a></li>
+		<% end %>
+	</ul>	
+<br />
+
