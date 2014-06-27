@@ -29,9 +29,9 @@ body {
 ================================ */
 
 .main-header       { background-color: #384047; }
-.main-nav a        { background-color: #3f8abf; }
+.main-nav a        { background-color: #5fcf80; }
 .main-logo a       { background-color: #5fcf80; }
-.primary-content   { background-color: #caebf6; }
+
 .secondary-content { background-color: #bfe3d0; }
 .main-footer       { background-color: #b7c0c7; }
 
@@ -81,7 +81,7 @@ body {
   width: 100%;
   margin-top: 10px;
   margin-bottom: 10px;
-  border: solid 1px;
+
   padding: 5px;
 }
 
@@ -179,7 +179,7 @@ body {
   ================================ */
 
   .feat-img {
-    width: 50%;
+    width: 100%;
     float: left;
     margin-right: 25px;
   }
